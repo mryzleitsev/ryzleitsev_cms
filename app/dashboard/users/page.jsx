@@ -28,7 +28,7 @@ const UsersPage = () => {
                <tr>
                    <td>
                     <div className={styles.user}>
-                       <Image src="/noavatar.png" alt="" width={40} height={40} className={styles.userImage}/>
+                       <Image src="/noavatar.png" alt="" width={60} height={60} className={styles.userImage}/>
                        Some Name
                     </div>
                    </td>
