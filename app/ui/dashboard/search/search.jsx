@@ -3,15 +3,17 @@
 import styles from "@/app/ui/dashboard/search/serach.module.css"
 import {MdSearch} from "react-icons/md";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {useDebouncedCallback} from "use-debounce";
 
 const Search = ({placeholder}) => {
     const searchParms = useSearchParams()
     const {replace} = useRouter();
     const pathname = usePathname()
 
-    const handleSearch = (e) =>{
+    const handleSearch = useDebouncedCallback((e) =>{
         const params = new URLSearchParams(searchParms)
 
+        params.set("page", 1);
 
         if(e.target.value){
             e.target.value.length > 2 && params.set("q", e.target.value);
@@ -20,7 +22,7 @@ const Search = ({placeholder}) => {
             params.delete("q");
         }
         replace(`${pathname}?${params}`)
-    }
+    }, 300)
 
     return (
         <div className={styles.container}>
