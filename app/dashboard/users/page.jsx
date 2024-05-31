@@ -5,10 +5,10 @@ import Image from "next/image";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import {fatchUsers} from "@/app/lib/data";
 
-const UsersPage = async () => {
+const UsersPage = async ({searchParams}) => {
 
-    const users = await fatchUsers()
-    console.log(users)
+    const q = searchParams?.q || "";
+    const users = await fatchUsers(q)
 
     return (
        <div className={styles.container}>
@@ -29,28 +29,29 @@ const UsersPage = async () => {
                   <td>Action</td>
               </tr>
                </thead>
-
                <tbody>
-               <tr>
+               {users.map((user) =>
+               <tr key={user.id}>
                    <td>
                     <div className={styles.user}>
-                       <Image src="/noavatar.png" alt="" width={60} height={60} className={styles.userImage}/>
-                       Some Name
+                       <Image src={user.img || "/noavatar.png"} alt="" width={60} height={60} className={styles.userImage}/>
+                        {user.username}
                     </div>
                    </td>
-                   <td>somemail@gmail.com</td>
-                   <td>30.05.2024</td>
-                   <td>Admin</td>
-                   <td>active</td>
+                   <td>{user.email}</td>
+                   <td>{user.createdAt?.toString().slice(4,16)}</td>
+                   <td>{user.isAdmin ?  "Admin" : "Client"}</td>
+                   <td>{user.isActive ? "active" : "passive"}</td>
                      <td>
                       <div className={styles.buttons}>
-                          <Link href="/dashboard/users/someid">
+                          <Link href={`/dashboard/users/${user.id}`}>
                               <button className={`${styles.button} ${styles.view}`}>View</button>
                           </Link>
                           <button className={`${styles.button} ${styles.delete}`}>Delete</button>
                       </div>
                      </td>
                </tr>
+                   )}
                </tbody>
            </table>
            <Pagination/>
