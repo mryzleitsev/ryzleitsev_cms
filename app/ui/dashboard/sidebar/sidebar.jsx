@@ -5,12 +5,6 @@ import {
     MdDashboard,
     MdSupervisedUserCircle,
     MdShoppingBag,
-    MdAttachMoney,
-    MdWork,
-    MdAnalytics,
-    MdPeople,
-    MdOutlineSettings,
-    MdHelpCenter,
     MdLogout,
 } from "react-icons/md";
 import { auth, signOut } from "@/app/auth";
@@ -39,16 +33,7 @@ const menuItems = [
     {
         title: "User",
         list: [
-            {
-                title: "Settings",
-                path: "/dashboard/settings",
-                icon: <MdOutlineSettings />,
-            },
-            {
-                title: "Help",
-                path: "/dashboard/help",
-                icon: <MdHelpCenter />,
-            },
+
         ],
     },
 ];

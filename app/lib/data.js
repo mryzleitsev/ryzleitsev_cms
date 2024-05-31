@@ -68,3 +68,14 @@ export const fatchProducts = async (q, page) => {
         throw new Error("Failed to fetch products!");
     }
 };
+
+export const fetchTotalUsers = async () => {
+    try {
+        await connectToDB();
+        const count = await User.countDocuments();
+        return count;
+    } catch (err) {
+        console.error("Ошибка при получении количества пользователей:", err);
+        throw new Error("Failed to fetch total users count!");
+    }
+};

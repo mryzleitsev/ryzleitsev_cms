@@ -7,8 +7,6 @@ const Dashbord = () => {
             <div className={styles.main}>
                 <div className={styles.cards}>
                     <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
                 </div>
             </div>
         </div>
