@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Simple CMS
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a simple CMS that manages products and users, including their addition, deletion, and editing. It is created as a coursework project by Ryzleitsev Myron from the 535a group.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Authentication**: Utilizes NextAuth for secure user authentication.
+- **CRUD Operations**: Supports Create, Read, Update, and Delete operations with MongoDB.
+- **Built with Next.js**: Leverages the powerful features of the Next.js framework.
+- **Version Control**: Managed with GitHub for effective version control and collaboration.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Table of Contents
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    git clone https://github.com/mryzleitsev/ryzleitsev_cms.git
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Install the dependencies:
 
-## Deploy on Vercel
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Set up your environment variables. Create a `.env.local` file in the root of your project and add the following:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    AUTH_SECRET=secretkey
+    AUTH_URL=http://localhost:3000/api/auth
+    ```
+
+4. Run the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+5. Open your browser and navigate to `http://localhost:3000`.
+
+## Usage
+
+- **Authentication**: Log in to the CMS using NextAuth.
+- **Manage Products**: Add, edit, and delete products from the admin interface.
+- **Manage Users**: Add, edit, and delete users from the admin interface.
+- **Default Admin Login**: Use the following credentials to log in as the admin:
+  - **Username**: `admin`
+  - **Password**: `admin`
+
+## Technologies
+
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **NextAuth**: Authentication for Next.js applications.
+- **MongoDB**: A NoSQL database for storing application data.
+- **GitHub**: For version control and project management.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/your-feature`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or suggestions, feel free to contact me:
+
+- **Name**: Ryzleitsev Myron
+- **Group**: 535a
+- **Email**: m.r.ryzleytsev@student.csn.khai.edu
